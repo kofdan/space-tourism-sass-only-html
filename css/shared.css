@@ -36,11 +36,11 @@ html {
   box-sizing: inherit;
 }
 
-img {
+/* img {
   width: 100%;
   height: 100%;
   display: block;
-}
+} */
 
 body {
   height: 100%;

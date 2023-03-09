@@ -27,13 +27,13 @@ const slider = async function () {
     .forEach((member) => {
       const html = `
         <div class='crew__item'>
-            <div class="border-bottom">
+            <div class="crew__img">
                 <img src="../${member.images.png}" alt="${member.role}">
             </div>
             <div class='member-info'>
             <h3>${member.role}</h3>
             <h1>${member.name}</h1>
-            <p class=''>${member.bio}</p>
+            <p>${member.bio}</p>
             </div>
         </div>
     `;
