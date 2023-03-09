@@ -1,0 +1,39 @@
+@import "../../helpers/placeholders";
+
+@media (min-width: 1440px) {
+  .secondary-title {
+    text-align: left;
+    padding: 4.75rem 0 4rem 10.4rem;
+    font-size: 1.75rem;
+    line-height: 1.2em;
+  }
+  .header {
+    &__inner {
+      padding-top: 2.5rem;
+
+      .hr {
+        position: absolute;
+        width: 473px;
+        left: 12%;
+        display: block;
+        height: 1px;
+        background-color: rgba($white, $alpha: 0.2);
+        z-index: 10;
+      }
+    }
+  }
+  .menu {
+    &__items {
+      width: 830px;
+      padding: 2.5rem 9rem 2.5rem 7.8rem;
+      font-size: 1rem;
+      line-height: 1.2em;
+    }
+    &__link {
+      span {
+        display: inline-block;
+        font-weight: 700;
+      }
+    }
+  }
+}

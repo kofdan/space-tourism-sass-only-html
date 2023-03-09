@@ -1,0 +1,59 @@
+@import "./vars";
+@import "./helpers/mixins";
+@import "./helpers//placeholders";
+
+body {
+  background-image: url("../assets/home/background-home-mobile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.title {
+  @extend %headings;
+  font-family: $font-family-secondary;
+  color: $grey;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
+.main {
+  padding: 3rem 0;
+  text-align: center;
+
+  &__title {
+    @extend %headings;
+    padding: 1rem 0;
+    color: $white;
+    font-size: 5rem;
+    line-height: 1.25;
+  }
+  &__description {
+    font-family: $font-family-secondary;
+    font-size: 0.94rem;
+    padding: 0 1.5rem 5rem 1.5rem;
+    color: $grey;
+    line-height: 1.7em;
+  }
+
+  &__explore {
+    @extend %headings;
+    background-color: $white;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+    @include centeredFlex();
+    a {
+      @extend %links;
+      display: block;
+      color: $black;
+    }
+    &:hover {
+    }
+  }
+}
+
+//  Спробувати розбити медіа-запити на окремі файли.!.
+
+@import "./adaptive/tablet/main";
+@import "./adaptive/desktop/main";

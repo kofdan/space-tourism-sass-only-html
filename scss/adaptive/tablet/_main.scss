@@ -1,0 +1,37 @@
+@media (min-width: 768px) {
+  body {
+    background-image: url("../../../assets/home/background-home-tablet.jpg");
+    background-size: cover;
+  }
+  .main {
+    padding-top: 6.63rem;
+    max-width: 450px;
+    margin: 0 auto;
+
+    &__title {
+      padding: 1.5rem 0;
+      color: $white;
+      font-size: $font-size-h1;
+      line-height: 1;
+    }
+
+    &__description {
+      margin: 0 auto;
+      padding-bottom: 9.8rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    &__explore {
+      width: 242px;
+      height: 242px;
+      font-size: 2rem;
+      letter-spacing: 0.063em;
+      margin-bottom: 5.63rem;
+    }
+  }
+
+  .title {
+    font-size: 1.25rem;
+    letter-spacing: 0.17em;
+  }
+}

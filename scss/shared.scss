@@ -1,0 +1,186 @@
+@import "./fonts";
+@import "./vars";
+@import "./helpers/mixins";
+@import "./helpers//placeholders";
+
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+}
+
+body {
+  height: 100%;
+  font-family: $font-family-default;
+  font-size: $font-size-default;
+  color: $white;
+  font-weight: 400;
+  min-width: 320px;
+  overflow-x: hidden; // для того щоб ????
+  background-color: $bg-color-defaul;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+.header__inner {
+  @include centeredFlex($justify: space-between);
+  flex-direction: row;
+  padding: 1.5rem;
+
+  .hr {
+    display: none;
+  }
+}
+
+.logo__link {
+  height: 2.5rem;
+}
+
+.mobile-menu {
+  z-index: 100;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 70%;
+  &__items {
+    padding-top: 116px;
+    @include centeredFlex($align: flex-start, $justify: flex-start);
+    flex-direction: column;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($white, $alpha: 0.04);
+    backdrop-filter: blur(40px);
+    color: $white;
+    font-family: $font-family-secondary;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  &__item {
+    padding-bottom: 2rem;
+    list-style: none;
+  }
+  &__items:last-child {
+    padding-bottom: 0;
+  }
+
+  &__link {
+    @extend %links;
+    span {
+      font-weight: 700;
+      padding-right: 1rem;
+    }
+  }
+  &__btn-close:hover,
+  &__btn-close:active {
+    cursor: pointer;
+  }
+  &__btn-close {
+    top: 34px;
+    right: 27px;
+    z-index: 10;
+    position: absolute;
+    border: none;
+    background-image: url("../assets/shared/icon-close.svg");
+    background-color: transparent;
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.menu {
+  &__items {
+    display: none;
+    @extend %lists;
+  }
+
+  &__link {
+    @extend %links;
+    span {
+      display: none;
+    }
+  }
+
+  &__btn-open {
+    border: none;
+    background-image: url("../assets/shared/icon-hamburger.svg");
+    background-color: transparent;
+    background-size: cover;
+    width: 24px;
+    height: 21px;
+  }
+  &__btn-open:hover,
+  &__btn-open:active {
+    cursor: pointer;
+  }
+}
+.active {
+  animation: mobile-menu-open 0.5s cubic-bezier(0.32, 0, 0.4, 0);
+  display: block;
+}
+
+@keyframes mobile-menu-open {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes mobile-menu-close {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100%;
+  }
+}
+
+.secondary-title {
+  text-align: center;
+  font-family: $font-family-secondary;
+  font-size: 1rem;
+  line-height: 1.2em;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  line-height: 1.1em;
+  letter-spacing: 0.17em;
+
+  span {
+    font-weight: 700;
+    opacity: 0.25;
+    padding-right: 1rem;
+  }
+}
+
+@import "./adaptive/tablet/shared";
+@import "./adaptive/desktop/shared";

@@ -1,0 +1,134 @@
+.main__explore, .main__title, .title {
+  text-transform: uppercase;
+}
+
+.main__explore a {
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+body {
+  background-image: url("../assets/home/background-home-mobile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.title {
+  font-family: "Barlow", sans-serif;
+  color: #d0d6f9;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
+
+.main {
+  padding: 3rem 0;
+  text-align: center;
+}
+.main__title {
+  padding: 1rem 0;
+  color: #fff;
+  font-size: 5rem;
+  line-height: 1.25;
+}
+.main__description {
+  font-family: "Barlow", sans-serif;
+  font-size: 0.94rem;
+  padding: 0 1.5rem 5rem 1.5rem;
+  color: #d0d6f9;
+  line-height: 1.7em;
+}
+.main__explore {
+  background-color: #fff;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__explore a {
+  display: block;
+  color: #0b0d17;
+}
+@media (min-width: 768px) {
+  body {
+    background-image: url("../../../assets/home/background-home-tablet.jpg");
+    background-size: cover;
+  }
+  .main {
+    padding-top: 6.63rem;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  .main__title {
+    padding: 1.5rem 0;
+    color: #fff;
+    font-size: 9.4rem;
+    line-height: 1;
+  }
+  .main__description {
+    margin: 0 auto;
+    padding-bottom: 9.8rem;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  .main__explore {
+    width: 242px;
+    height: 242px;
+    font-size: 2rem;
+    letter-spacing: 0.063em;
+    margin-bottom: 5.63rem;
+  }
+  .title {
+    font-size: 1.25rem;
+    letter-spacing: 0.17em;
+  }
+}
+@media (min-width: 1440px) {
+  body {
+    background-image: url("../../../assets/home/background-home-desktop.jpg");
+  }
+  .main {
+    max-width: 1108px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15.7rem;
+    padding-bottom: 0;
+  }
+  .main__prev {
+    width: 50%;
+    text-align: left;
+  }
+  .main__prev P {
+    padding: 0;
+  }
+  .main__explore {
+    margin: 0;
+    align-self: flex-end;
+    width: 274px;
+    height: 274px;
+  }
+  .main__explore a {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  .main__title {
+    padding: 1.5rem 0;
+    font-size: 9.4rem;
+    line-height: 1.2;
+    letter-spacing: 1.5rem;
+  }
+  .main__description {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+  .main .title {
+    font-size: 1.75rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

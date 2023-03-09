@@ -1,0 +1,43 @@
+@media (min-width: 1440px) {
+  body {
+    background-image: url("../../../assets/destination/background-destination-desktop.jpg");
+  }
+  .planet {
+    &__container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      max-width: 1110px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    &__img {
+      max-width: 445px;
+      max-height: 445px;
+      padding: 0;
+    }
+    &__wrapper {
+      padding-left: 157px;
+    }
+    &__list {
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 2.3rem;
+    }
+    &__item {
+      font-size: 1rem;
+      line-height: 1.2em;
+      letter-spacing: 0.17em;
+    }
+
+    &__title {
+      font-size: $font-size-h2;
+      padding: 0 0 0.9rem 0;
+    }
+    &__description {
+      font-size: 1.13rem;
+    }
+  }
+}

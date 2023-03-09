@@ -1,0 +1,89 @@
+@import "../vars";
+@import "../helpers/mixins";
+@import "../helpers/placeholders";
+
+body {
+  background-image: url("../../assets/crew/background-crew-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #0b0d17;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  width: 327px;
+  overflow: hidden;
+
+  .dots {
+    margin: 0 auto;
+    width: 88px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &__dot {
+      border: none;
+      background: rgba($white, 0.17);
+      font-family: inherit;
+      color: #333;
+      border-radius: 50%;
+      height: 0.63rem;
+      width: 0.63rem;
+      cursor: pointer;
+    }
+    &__dot:hover,
+    &__dot:active {
+      background: rgba($white, 1);
+    }
+    .crew-active-btn {
+      background: rgba($white, 1);
+    }
+  }
+}
+
+.crew {
+  width: calc(350px * 4);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transition: transform 0.7s;
+
+  &__item {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    padding: 1rem;
+    h1,
+    h3 {
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 1rem;
+      line-height: 1.2;
+      color: rgba($white, $alpha: 0.5);
+    }
+    h1 {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      padding-bottom: 1rem;
+    }
+    p {
+      font-family: $font-family-secondary;
+      font-size: 0.95rem;
+      line-height: 1.6em;
+    }
+  }
+
+  & .border-bottom {
+    border-bottom: 1px solid rgba($grey, $alpha: 0.5);
+    padding-bottom: 0.1rem;
+    margin: 2rem 0;
+    margin: 0 auto;
+
+  }
+}
+@import "../adaptive/tablet/crew";
+@import "../adaptive/desktop/crew";

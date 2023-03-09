@@ -1,0 +1,41 @@
+@media (min-width: 1440px) {
+  body {
+    background-image: url("../../../assets/home/background-home-desktop.jpg");
+  }
+  .main {
+    max-width: 1108px;
+    @include centeredFlex($justify: space-between);
+    padding-top: 15.7rem;
+    padding-bottom: 0;
+    &__prev {
+      width: 50%;
+      text-align: left;
+      P {
+        padding: 0;
+      }
+    }
+    &__explore {
+      margin: 0;
+      align-self: flex-end;
+      width: 274px;
+      height: 274px;
+      a {
+        font-size: 2rem;
+        letter-spacing: 2px;
+      }
+    }
+    &__title {
+      padding: 1.5rem 0;
+      font-size: $font-size-h1;
+      line-height: 1.2;
+      letter-spacing: 1.5rem;
+    }
+    &__description {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+    .title {
+      font-size: 1.75rem;
+    }
+  }
+}
