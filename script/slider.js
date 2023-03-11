@@ -110,7 +110,7 @@ const dotHandler = (e) => {
       (Number(id - 1) * 100) / 4
     }%)`;
     startAutoSlide();
-  }, 2000);
+  }, 5000);
 };
 
 dotContainer.addEventListener("click", dotHandler);
