@@ -19,7 +19,7 @@ const getData = async function () {
 // slider
 let autoSlideInterval = false;
 const startAutoSlide = () => {
-  autoSlideInterval = setInterval(autoSlide, 1000);
+  autoSlideInterval = setInterval(autoSlide, 5000);
 };
 
 const stopAutoSlie = () => {
