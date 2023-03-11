@@ -2,6 +2,7 @@
 // data /
 const crewContainer = document.querySelector(".crew");
 const dotContainer = document.querySelector(".dots");
+let counter = 0;
 
 const getData = async function () {
   try {
@@ -16,7 +17,15 @@ const getData = async function () {
 // --------------------- //
 
 // slider
+let autoSlideInterval = false;
+const startAutoSlide = () => {
+  autoSlideInterval = setInterval(autoSlide, 1000);
+};
 
+const stopAutoSlie = () => {
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = false;
+};
 const slider = async function () {
   const data = await getData();
   const { crew } = data;
@@ -43,6 +52,7 @@ const slider = async function () {
 const createDots = async () => {
   const data = await getData();
   const { crew } = data;
+
   crew.forEach((_, i) => {
     const html = `<button class="dots__dot" data-id='${i + 1}'></button>`;
     dotContainer.insertAdjacentHTML("beforeend", html);
@@ -53,45 +63,62 @@ const createDots = async () => {
     id === "1" ? i.classList.add("crew-active-btn") : "";
   });
 };
-const goToSlide = (id) => {
-  switch (id) {
-    case "1":
-      crewContainer.style.transform = "translateX(0)";
-      break;
-    case "2":
-      crewContainer.style.transform = "translateX(-25%)";
-      break;
-    case "3":
-      crewContainer.style.transform = "translateX(-50%)";
-      break;
-    case "4":
-      crewContainer.style.transform = "translateX(-75%)";
-      break;
-    default:
-      break;
+
+const autoSlide = () => {
+  const dots = document.querySelectorAll(".dots__dot");
+  crewContainer.style.transform = `translateX(-${(counter * 100) / 4}%)`;
+  counter++;
+  if (counter > 4) {
+    counter = 0;
+    crewContainer.style.transform = `translateX(0)`;
+  }
+
+  dots.forEach((dot) => {
+    const { id } = dot.dataset;
+    dot.classList.remove("crew-active-btn");
+    if (counter === +id) {
+      dot.classList.add("crew-active-btn");
+    }
+  });
+};
+
+const addActiveClass = (e) => {
+  const dots = document.querySelectorAll(".dots__dot");
+  dots.forEach((i) => {
+    i.classList.remove("crew-active-btn");
+  });
+  if (!e.target.classList.contains("crew-active-btn")) {
+    e.target.classList.add("crew-active-btn");
+    clearInterval(autoSlideInterval);
   }
 };
 
+startAutoSlide();
+
 const dotHandler = (e) => {
-  if (e.target.tagName === "button".toUpperCase()) {
-    const { id } = e.target.dataset;
-    const dots = document.querySelectorAll(".dots__dot");
-    dots.forEach((i) => {
-      i.classList.remove("crew-active-btn");
-    });
-    if (e.target.classList.contains("dots__dot")) {
-      goToSlide(id);
-    }
-    if (!e.target.classList.contains("crew-active-btn")) {
-      e.target.classList.add("crew-active-btn");
-    }
-  }
+  if (e.target.tagName === "button".toUpperCase()) addActiveClass(e);
+  stopAutoSlie();
+  const { id } = e.target.dataset;
+  if (+id === 1) crewContainer.style.transform = `translateX(0%)`;
+  else
+    crewContainer.style.transform = `translateX(-${
+      (Number(id - 1) * 100) / 4
+    }%)`;
+  setTimeout(() => {
+    stopAutoSlie();
+    crewContainer.style.transform = `translateX(-${
+      (Number(id - 1) * 100) / 4
+    }%)`;
+    startAutoSlide();
+  }, 2000);
 };
+
 dotContainer.addEventListener("click", dotHandler);
 
 const init = function () {
-  createDots();
   slider();
+  createDots();
+  autoSlide();
 };
 
 // --------------------- //

@@ -22,11 +22,17 @@ body {
   border-radius: 50%;
   width: 0.63rem;
   height: 0.63rem;
-  background-color: rgba(255, 255, 255, 0.17);
+  /* background-color: rgba(255, 255, 255, 0.17); */
+  background-color: white;
 }
-.dots__dot:hover, .dots__dot:active {
+.dots__dot:hover,
+.dots__dot:active {
   cursor: pointer;
   background-color: white;
+}
+
+.dots .dots__dot:not(.crew-active-btn) {
+  background-color: rgba(255, 255, 255, 0.17);
 }
 
 .crew-active-btn {
@@ -40,6 +46,7 @@ body {
   margin: 0 auto;
   overflow: hidden;
 }
+
 .container .crew {
   transition: all 1s ease;
   display: flex;
