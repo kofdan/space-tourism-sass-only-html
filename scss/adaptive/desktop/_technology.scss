@@ -1,0 +1,64 @@
+@media (min-width: 1440px) {
+  body {
+    background-image: url("/assets/technology/background-technology-desktop.jpg");
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+  padding-bottom: 6.3rem;
+
+    .technology {
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "tabs desc img";
+      text-align: left;
+
+      &__img {
+        grid-area: img;
+        width: 100%;
+        max-height: 33rem;
+        margin: 0 auto;
+        padding: 0;
+        img {
+          width: 100%;
+          
+        }
+      }
+
+      &__desc {
+        grid-area: desc;
+        h3 {
+          font-size: 1rem;
+          padding-bottom: 1rem;
+        }
+        h1 {
+          font-size: 3.5rem;
+          padding-bottom: 1.1rem;
+        }
+        p {
+          font-size: 1.12rem;
+          line-height: 2rem;
+          padding: 0;
+          max-width: 27.8rem;
+        }
+      }
+    }
+  }
+
+  .tabs {
+    grid-area: tabs;
+    flex-direction: column;
+    padding: 0;
+    font-size: 2rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 5rem;
+    max-height: 19rem;
+    &__item {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}
